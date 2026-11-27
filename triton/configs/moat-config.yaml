@@ -1,0 +1,29 @@
+defaults:
+    runtime: apptainer
+    runtimes:
+        apptainer:
+            cachedir: /appl/manual_installations/software/moat/images
+            imageurl: ghcr.io/aaltorse/moat:v0.4.1-rockylinux9
+            mountcwd: false
+            passenv: true
+            type: apptainer
+envs:
+    agents:
+        command: bash
+        home: $WRKDIR/agents-home/
+        mountcwd: true
+        mounts:
+            - /tmp/moat:/tmp
+        readonlymounts:
+            - /scratch/shareddata/triton-skills
+    slurm_agents:
+        command: bash
+        home: $WRKDIR/agents-home/
+        mountcwd: true
+        mounts:
+            - /tmp/moat:/tmp
+        readonlymounts:
+            - /scratch/shareddata/triton-skills
+            - /run/munge
+            - /etc/passwd
+            - /etc/group

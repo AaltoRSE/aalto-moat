@@ -1,0 +1,26 @@
+{
+  "providers": [
+    {
+      "name": "llm-gateway",
+      "display_name": "Aalto LLM Gateway",
+      "base_url": "https://llm-gateway.k8s.aalto.fi/api/v1",
+      "api_key_env": "AALTO_LLM_GATEWAY_KEY",
+      "auth": "bearer",
+      "default_model": "zai-org/GLM-5.3-Flash",
+      "pi_api": "openai-completions",
+      "opencode_npm": "@ai-sdk/openai-compatible",
+      "codex_disable_response_storage": false
+    },
+    {
+      "name": "aalto-azure",
+      "display_name": "Aalto OpenAI API",
+      "base_url": "https://ai-api-v2.aalto.fi/v1",
+      "api_key_env": "AALTO_AZURE_KEY",
+      "auth": "bearer",
+      "default_model": "gpt-5-2025-08-07",
+      "pi_api": "openai-responses",
+      "opencode_npm": "@ai-sdk/openai",
+      "codex_disable_response_storage": true
+    }
+  ]
+}
